@@ -1,4 +1,10 @@
-const h2 = document.createElement('h2');
-h2.textContent = 'This content added by JavaScript';
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
 
-document.querySelector('body').appendChild(h2);
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
